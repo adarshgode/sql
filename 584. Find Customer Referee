@@ -1,0 +1,7 @@
+select c1.name
+from Customer c1
+where c1.id not in
+(select c1.id 
+from Customer c1
+where
+c1.referee_id = 2)
