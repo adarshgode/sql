@@ -5,3 +5,10 @@ where c1.id not in
 from Customer c1
 where
 c1.referee_id = 2)
+
+
+// 2
+select name
+from Customer
+where referee_id <> 2 
+or referee_id is null
