@@ -1,0 +1,11 @@
+select min(abs(p1.x - p2.x)) as Shortest
+from Point p1
+cross join Point p2
+where p1.x <> p2.x
+// it will compare n*n rows
+
+select min(abs(p1.x - p2.x)) as Shortest
+from Point p1
+cross join Point p2
+where p1.x < p2.x
+// it will compare less rows
