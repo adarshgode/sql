@@ -1,0 +1,6 @@
+select extra as report_result, count(distinct post_id) as report_count
+from Action
+where date = '2019-07-04'
+and action = 'report'
+and extra is not null
+group by extra
