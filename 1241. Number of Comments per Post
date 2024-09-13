@@ -1,0 +1,16 @@
+with posts as
+(selet distinct sub_id
+from Submissions
+where parent_id is null),
+com as
+(select parent_id,count(distinct sub_id) as Num
+from Submissions
+where parent_id id not null
+group by parent_id)
+
+select sub_id as post_id, case when Num is not null Num
+else 0 ens as number_of_comments
+from posts
+left join com
+on posts.sub_id = com.parent_id
+order by post_id
