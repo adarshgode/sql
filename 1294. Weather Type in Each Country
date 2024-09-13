@@ -1,0 +1,8 @@
+select c.country_name, case when avg(w.wheather_state> < 15 then 'Cold' when avg(w.wheather_state> >=25 then 'Hot'
+else 'Warm' end as wheather_type
+from Wheather w
+left join Countries c
+on w.country_id = c.country_id
+where Month(day) = 11
+and Year(day) = 2019
+group by c.country_name
