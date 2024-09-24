@@ -1,0 +1,5 @@
+select w.name as warehoouse_name,
+sum(w.unit * p.Length * p.Height * p.Width ) as volume
+from Warehouse w
+inner join Products p
+on w.product_id = p.product_id
