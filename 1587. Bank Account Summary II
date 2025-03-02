@@ -1,0 +1,11 @@
+select u.name as NAME, t.balance as BALANCE
+from Users u
+left join
+(
+    select account, sum(amount) as balance
+    from Transactions
+    group by account
+    having sum(amount) > 10000
+) t
+on u.account = t.account
+where t.balance > 10000;
